@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import DitherShader from "../ui/dither-shader";
 
 interface AnimatedCollageProps {
   images: string[];
@@ -120,6 +121,18 @@ export const AnimatedCollage = ({
                   draggable={false}
                   priority={index === 0}
                 />
+
+                {/* <DitherShader
+                  src={image}
+                  gridSize={1}
+                  ditherMode="bayer"
+                  colorMode="duotone"
+                  primaryColor="primary"
+                  secondaryColor="#f0e68c"
+                  threshold={0.45}
+                  className="h-72 w-[400px] sm:h-80 sm:w-[500px]"
+                /> */}
+
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
               </div>

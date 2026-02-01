@@ -6,6 +6,8 @@ import { Spotlight } from "../ui/spotlight";
 import { useTheme } from "next-themes";
 import { ImageCarousel } from "../custom/image-collage";
 import { AnimatedCollage } from "../custom/animated-collage";
+import HeroIntro from "./HeroIntro";
+import { motion } from "motion/react";
 
 export function HeroSection() {
   const { theme } = useTheme();
@@ -20,15 +22,16 @@ export function HeroSection() {
 
   const portfolioImages = [
     "/professional-profile.jpg",
-    "/professional-profile.jpg",
-    "/professional-profile.jpg",
+    "/godawari.jpeg",
+    "/jungle.jpeg",
+    "/maak-arar.jpeg",
   ];
 
   return (
     <div className="">
       <div
         className={cn(
-          "relative flex h-[50rem] md:h-[40rem] w-full overflow-hidden rounded-md antialiased md:items-center md:justify-center",
+          "relative flex h-[60rem] md:h-[40rem] w-full overflow-hidden rounded-md antialiased md:items-center md:justify-center",
           "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60",
         )}
       >
@@ -63,12 +66,68 @@ export function HeroSection() {
               >
                 Hey! I am Ashaya Sah
               </h1>
-              <p className="mx-auto md:mx-0 mt-4 max-w-lg text-center md:text-left text-base font-normal text-muted-foreground">
+
+              {/* <HeroIntro></HeroIntro> */}
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="text-lg md:text-xl text-muted-foreground max-w-3xl"
+              >
+                I'm currently working as a{" "}
+                <span className="text-foreground font-medium">
+                  Software Engineer
+                </span>{" "}
+                at{" "}
+                <a
+                  href="https://cas.com.np"
+                  className="text-primary hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  CAS Total Solutions, Nepal
+                </a>
+                . I've built software trusted by{" "}
+                <a
+                  href="https://losapp.nppf.org.bt"
+                  className="font-medium text-primary hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  the Bhutanese Government
+                </a>
+                , serving thousands of users. Currently building Projects and AI
+                tools that help people and businesses in their daily life.
+              </motion.p>
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="mt-6 flex flex-wrap gap-3"
+              >
+                {[
+                  "JavaScript / TypeScript",
+                  "Python",
+                  "Java (DSA)",
+                  "Go",
+                  "SQL",
+                ].map((tech) => (
+                  <span
+                    key={tech}
+                    className="inline-flex items-center rounded-full border px-4 py-1.5 text-sm font-medium text-foreground bg-muted"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </motion.div>
+
+              {/* <p className="mx-auto md:mx-0 mt-4 max-w-lg text-center md:text-left text-base font-normal text-muted-foreground">
                 Spotlight effect is a great way to draw attention to a specific
                 part of the page. Here, we are drawing the attention towards the
                 text section of the page. I don&apos;t know why but I&apos;m
                 running out of copy.
-              </p>
+              </p> */}
             </div>
 
             {/* Image Carousel */}
