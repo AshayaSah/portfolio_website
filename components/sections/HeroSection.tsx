@@ -31,7 +31,7 @@ export function HeroSection() {
     <div className="">
       <div
         className={cn(
-          "relative flex h-[60rem] md:h-[40rem] w-full overflow-hidden rounded-md antialiased md:items-center md:justify-center",
+          "relative flex h-[60rem] md:h-[50rem] lg:h-[40rem] w-full overflow-hidden rounded-md antialiased md:items-center md:justify-center",
           "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60",
         )}
       >
