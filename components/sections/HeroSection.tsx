@@ -1,12 +1,10 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Spotlight } from "../ui/spotlight";
 import { useTheme } from "next-themes";
-import { ImageCarousel } from "../custom/image-collage";
 import { AnimatedCollage } from "../custom/animated-collage";
-import HeroIntro from "./HeroIntro";
 import { motion } from "motion/react";
 
 export function HeroSection() {
@@ -55,12 +53,13 @@ export function HeroSection() {
         />
 
         <div className="relative z-10 mx-auto w-full container px-4 pt-20 md:pt-0">
-          <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8"> */}
+          <div className="md:px-8 flex justify-evenly flex-col md:flex-row items-center flex-wrap gap-16">
             {/* Text Content */}
             <div className="flex-1">
               <h1
                 className={cn(
-                  "bg-clip-text text-center md:text-left text-4xl font-bold text-transparent md:text-7xl",
+                  "bg-clip-text text-center md:text-left text-4xl font-bold text-transparent md:text-7xl pb-4",
                   "bg-gradient-to-b from-foreground to-foreground/60",
                 )}
               >

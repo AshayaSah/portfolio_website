@@ -5,9 +5,7 @@ import HomePage from "@/pages/HomePage";
 export default function Home() {
   return (
     <>
-      <Navbar></Navbar>
       <HomePage></HomePage>
-      <FloatingDockDemo></FloatingDockDemo>
     </>
   );
 }
