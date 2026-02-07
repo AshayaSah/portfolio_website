@@ -9,24 +9,11 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { href: "#home", label: "Home" },
+    { href: "/", label: "Home" },
     { href: "#about", label: "About" },
-    { href: "#projects", label: "Projects" },
-    { href: "#contact", label: "Contact" },
-  ];
-
-  const words = [
-    {
-      text: "Mr.",
-    },
-    {
-      text: "Ashaya",
-      className: "text-primary",
-    },
-    {
-      text: "Sah",
-      className: "text-primary",
-    },
+    { href: "/achievements", label: "Achievements" },
+    { href: "/projects", label: "Projects" },
+    { href: "/contact", label: "Contact" },
   ];
 
   return (

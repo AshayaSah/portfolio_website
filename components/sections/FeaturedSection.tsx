@@ -5,7 +5,7 @@ import { ThreeDCard } from "./ThreeDCard";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
-export function FeaturedProject() {
+export function FeaturedSection() {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -33,12 +33,15 @@ export function FeaturedProject() {
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-background [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
       <div className="relative z-10 container mx-auto">
-        <h1 className="text-4xl font-bold text-center md:text-7xl text-foreground">
+        <h1 className="text-5xl font-bold text-center md:text-7xl text- foreground">
           Featured
         </h1>
+        <p className="text-center text-muted-foreground mt-2">
+          Technologies I work with
+        </p>
 
         {/* <LayoutGrid cards={cards} /> */}
-        <div className="flex justify-between w-full flex-col lg:flex-row flex-wrap">
+        <div className="flex justify-evenly w-full flex-col lg:flex-row flex-wrap">
           {cards.map((card) => {
             return <ThreeDCard key={card.id} card={card} />;
           })}
@@ -91,7 +94,7 @@ const cards = [
     cardTitle: "My Hobbies",
     title: "Want To Know Me More ..",
     subTitle: "(reasons not to hire me)",
-    content: `Love to do Randoms Things. Love listening Bhojpuri Songs. Travelling (only on bike). Exploring New Things 
+    content: `Love to do Randoms Things. Love listening Bhojpuri Songs. Travelling. Exploring New Things 
             (maybe Quantam Physics). Mad about CARS (Skyline GTR R34 <3)`,
     className: "col-span-1",
     tryNow: "#experienec",
