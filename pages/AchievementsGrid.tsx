@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+import { achievementsData } from "@/data/AchievementsData";
+
 import {
   Trophy,
   Award,
@@ -8,8 +10,11 @@ import {
   Medal,
   Calendar,
   ExternalLink,
+  LucideIcon,
 } from "lucide-react";
 import Link from "next/link";
+
+type CategoryKey = "award" | "certification" | "competition" | "recognition";
 
 export interface Achievement {
   id: string;
@@ -17,47 +22,57 @@ export interface Achievement {
   organization: string;
   date: string;
   description: string;
-  category: "award" | "certification" | "competition" | "recognition";
+  category: CategoryKey;
   image?: string;
   skills?: string[];
   link?: string;
   rank?: string;
 }
 
-interface AchievementsGridProps {
-  achievements: Achievement[];
-}
+type CategoryConfigItem = {
+  icon: LucideIcon;
+  color: string;
+  bgColor: string;
+  borderColor: string;
+  label: string;
+};
 
-const categoryConfig = {
+export type CatConfig = Record<CategoryKey, CategoryConfigItem>;
+
+export const categoryConfig: CatConfig = {
   award: {
     icon: Trophy,
     color: "text-yellow-600 dark:text-yellow-500",
     bgColor: "bg-yellow-600/10",
     borderColor: "border-yellow-600/20",
+    label: "Award",
   },
   certification: {
     icon: Award,
     color: "text-blue-600 dark:text-blue-500",
     bgColor: "bg-blue-600/10",
     borderColor: "border-blue-600/20",
+    label: "Certification",
   },
   competition: {
     icon: Medal,
     color: "text-purple-600 dark:text-purple-500",
     bgColor: "bg-purple-600/10",
     borderColor: "border-purple-600/20",
+    label: "Competition",
   },
   recognition: {
     icon: Star,
     color: "text-green-600 dark:text-green-500",
     bgColor: "bg-green-600/10",
     borderColor: "border-green-600/20",
+    label: "Recognition",
   },
 };
 
-export default function AchievementsGrid({
-  achievements,
-}: AchievementsGridProps) {
+export default function AchievementsGrid() {
+  const achievements: Achievement[] = achievementsData;
+
   return (
     <section className="w-full py-16 bg-background">
       <div className="container mx-auto px-4">
@@ -78,9 +93,10 @@ export default function AchievementsGrid({
 
         {/* Achievements Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {achievements.map((achievement) => (
-            <AchievementCard key={achievement.id} achievement={achievement} />
-          ))}
+          {achievements &&
+            achievements.map((achievement) => (
+              <AchievementCard key={achievement.id} achievement={achievement} />
+            ))}
         </div>
 
         {/* Empty State */}

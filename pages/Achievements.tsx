@@ -14,44 +14,21 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { Achievement } from "./AchievementsGrid";
+import { Achievement, CatConfig, categoryConfig } from "./AchievementsGrid";
 
 interface AchievementDetailProps {
   achievement: Achievement;
 }
 
-const categoryConfig = {
-  award: {
-    icon: Trophy,
-    color: "text-yellow-600 dark:text-yellow-500",
-    bgColor: "bg-yellow-600/10",
-    borderColor: "border-yellow-600/20",
-    label: "Award",
-  },
-  certification: {
-    icon: Award,
-    color: "text-blue-600 dark:text-blue-500",
-    bgColor: "bg-blue-600/10",
-    borderColor: "border-blue-600/20",
-    label: "Certification",
-  },
-  competition: {
-    icon: Medal,
-    color: "text-purple-600 dark:text-purple-500",
-    bgColor: "bg-purple-600/10",
-    borderColor: "border-purple-600/20",
-    label: "Competition",
-  },
-  recognition: {
-    icon: Star,
-    color: "text-green-600 dark:text-green-500",
-    bgColor: "bg-green-600/10",
-    borderColor: "border-green-600/20",
-    label: "Recognition",
-  },
-};
-
 export default function Achievements({ achievement }: AchievementDetailProps) {
+  if (!achievement) {
+    return (
+      <div className="min-h-screen flex items-center justify-center text-muted-foreground">
+        <p>Achievement not found.</p>
+      </div>
+    );
+  }
+
   const config = categoryConfig[achievement.category];
   const Icon = config.icon;
 
