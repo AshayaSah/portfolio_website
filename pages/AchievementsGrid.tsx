@@ -13,33 +13,9 @@ import {
   LucideIcon,
 } from "lucide-react";
 import Link from "next/link";
+import { Achievement, CategoryConfig } from "@/data/AchievementsTypes";
 
-type CategoryKey = "award" | "certification" | "competition" | "recognition";
-
-export interface Achievement {
-  id: string;
-  title: string;
-  organization: string;
-  date: string;
-  description: string;
-  category: CategoryKey;
-  image?: string;
-  skills?: string[];
-  link?: string;
-  rank?: string;
-}
-
-type CategoryConfigItem = {
-  icon: LucideIcon;
-  color: string;
-  bgColor: string;
-  borderColor: string;
-  label: string;
-};
-
-export type CatConfig = Record<CategoryKey, CategoryConfigItem>;
-
-export const categoryConfig: CatConfig = {
+export const categoryConfig: CategoryConfig = {
   award: {
     icon: Trophy,
     color: "text-yellow-600 dark:text-yellow-500",

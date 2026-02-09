@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import {
   Trophy,
   Award,
@@ -14,7 +13,8 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { Achievement, CatConfig, categoryConfig } from "./AchievementsGrid";
+import { categoryConfig } from "./AchievementsGrid";
+import { Achievement } from "@/data/AchievementsTypes";
 
 interface AchievementDetailProps {
   achievement: Achievement;
@@ -47,8 +47,8 @@ export default function Achievements({ achievement }: AchievementDetailProps) {
   };
 
   return (
-    <div className="min-h-screen bg-background py-12">
-      <div className="container mx-auto px-4 max-w-4xl">
+    <div className="bg-background py-12">
+      <div className="container mx-auto px-4">
         {/* Back Button */}
         <Link
           href="/achievements"
@@ -122,10 +122,10 @@ export default function Achievements({ achievement }: AchievementDetailProps) {
           </div>
 
           {/* Image Section (if available) */}
-          {achievement.image && (
+          {achievement.images && (
             <div className="relative w-full h-64 md:h-96 bg-muted">
               <Image
-                src={achievement.image}
+                src={achievement.images[0]}
                 alt={achievement.title}
                 fill
                 className="object-cover"

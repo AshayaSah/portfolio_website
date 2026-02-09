@@ -1,4 +1,4 @@
-import { Achievement } from "@/pages/AchievementsGrid";
+import { Achievement } from "./AchievementsTypes";
 
 export const achievementsData: Achievement[] = [
   {
@@ -12,7 +12,7 @@ export const achievementsData: Achievement[] = [
     rank: "1st Place",
     skills: ["Python", "TensorFlow", "React", "FastAPI", "Docker"],
     link: "https://example.com/certificate",
-    image: "/images/hackathon-2024.jpg",
+    images: ["/achievements/kibo.png"],
   },
   {
     id: "aws-solutions-architect",
@@ -113,23 +113,6 @@ export const achievementsData: Achievement[] = [
     category: "competition",
     rank: "Winner",
     skills: ["Product Management", "Next.js", "WebRTC", "PostgreSQL", "Agile"],
-  },
-  {
-    id: "security-certification",
-    title: "CompTIA Security+ Certified",
-    organization: "CompTIA",
-    date: "April 2022",
-    description:
-      "Obtained CompTIA Security+ certification, validating baseline cybersecurity skills and knowledge. Demonstrated competency in risk management, network security, cryptography, and compliance. This certification establishes the core knowledge required for any cybersecurity role.",
-    category: "certification",
-    skills: [
-      "Cybersecurity",
-      "Network Security",
-      "Risk Management",
-      "Compliance",
-      "Encryption",
-    ],
-    link: "https://www.comptia.org/certifications/security",
   },
 ];
 

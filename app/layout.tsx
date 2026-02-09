@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/ui/theme-provider";
 import Navbar from "@/components/sections/Navbar";
 import { FloatingDockDemo } from "@/components/sections/FloatingDock";
 import Footer from "@/components/sections/Footer";
+import FooterWave from "@/components/sections/FooterWave";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,7 +41,8 @@ export default function RootLayout({
           <Navbar></Navbar>
           {children}
           <FloatingDockDemo></FloatingDockDemo>
-          <Footer></Footer>
+          {/* <Footer></Footer> */}
+          <FooterWave / >
         </ThemeProvider>
       </body>
     </html>
