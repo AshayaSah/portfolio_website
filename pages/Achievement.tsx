@@ -50,7 +50,7 @@ const content: AchievementAbout[] = [
     ),
   },
 ];
-export function StickyScrollRevealDemo() {
+export default function StickyScrollRevealDemo() {
   return (
     <div className="w-full py-4">
       <StickyScroll content={content} />

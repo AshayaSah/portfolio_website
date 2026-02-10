@@ -3,16 +3,13 @@ import React, { useEffect, useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "motion/react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
+import { AchievementAbout } from "@/data/AchievementsTypes";
 
 export const StickyScroll = ({
   content,
   contentClassName,
 }: {
-  content: {
-    title: string;
-    description: string;
-    content?: React.ReactNode | any;
-  }[];
+  content: AchievementAbout[];
   contentClassName?: string;
 }) => {
   const [activeCard, setActiveCard] = React.useState(0);

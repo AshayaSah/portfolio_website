@@ -25,10 +25,10 @@ type CategoryConfigItem = {
   label: string;
 };
 
-export type AchievementAbout = {
+export interface AchievementAbout {
   title: string;
   description: string;
   content: ReactNode;
-};
+}
 
 export type CategoryConfig = Record<CategoryKey, CategoryConfigItem>;

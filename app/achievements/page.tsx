@@ -1,4 +1,3 @@
-import { StickyScrollRevealDemo } from "@/pages/Achievement";
 import AchievementsGrid from "@/pages/AchievementsGrid";
 
 export default function AchievementsPage() {
