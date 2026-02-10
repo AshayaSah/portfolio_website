@@ -40,15 +40,17 @@ export const StickyScroll = ({
     setActiveCard(closestBreakpointIndex);
   });
 
+  // Using CSS variable references for theme compatibility
   const backgroundColors = [
-    "#0f172a", // slate-900
-    "#000000", // black
-    "#171717", // neutral-900
+    "hsl(var(--primary))",
+    "hsl(var(--muted))",
+    "hsl(var(--accent))",
   ];
+
   const linearGradients = [
-    "linear-gradient(to bottom right, #06b6d4, #10b981)", // cyan-500 to emerald-500
-    "linear-gradient(to bottom right, #ec4899, #6366f1)", // pink-500 to indigo-500
-    "linear-gradient(to bottom right, #f97316, #eab308)", // orange-500 to yellow-500
+    "linear-gradient(to bottom right, hsl(var(--primary)), hsl(var(--secondary)))",
+    "linear-gradient(to bottom right, hsl(var(--accent)), hsl(var(--primary)))",
+    "linear-gradient(to bottom right, hsl(var(--secondary)), hsl(var(--accent)))",
   ];
 
   const [backgroundGradient, setBackgroundGradient] = useState(
@@ -64,8 +66,16 @@ export const StickyScroll = ({
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="relative flex h-[30rem] justify-center space-x-10 overflow-y-auto rounded-md p-10"
+      transition={{
+        duration: 0.5,
+        ease: "easeInOut",
+      }}
+      className="scrollbar-hide relative flex h-[30rem] justify-center space-x-10 overflow-y-auto rounded-md border border-border p-10"
       ref={ref}
+      style={{
+        scrollbarWidth: "none",
+        msOverflowStyle: "none",
+      }}
     >
       <div className="div relative flex items-start px-4">
         <div className="max-w-2xl">
@@ -78,7 +88,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-2xl font-bold text-slate-100"
+                className="text-2xl font-bold text-foreground"
               >
                 {item.title}
               </motion.h2>
@@ -89,7 +99,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-kg mt-10 max-w-sm text-slate-300"
+                className="mt-10 max-w-sm text-lg text-muted-foreground"
               >
                 {item.description}
               </motion.p>
@@ -98,15 +108,26 @@ export const StickyScroll = ({
           <div className="h-40" />
         </div>
       </div>
-      <div
+      <motion.div
         style={{ background: backgroundGradient }}
+        animate={{ background: backgroundGradient }}
+        transition={{
+          duration: 0.5,
+          ease: "easeInOut",
+        }}
         className={cn(
-          "sticky top-10 hidden h-60 w-80 overflow-hidden rounded-md bg-white lg:block",
+          "sticky top-10 hidden h-60 w-80 overflow-hidden rounded-md border border-border shadow-lg lg:block",
           contentClassName,
         )}
       >
         {content[activeCard].content ?? null}
-      </div>
+      </motion.div>
+
+      <style jsx>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </motion.div>
   );
 };

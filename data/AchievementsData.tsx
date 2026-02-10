@@ -6,6 +6,72 @@ export const achievementsData: Achievement[] = [
     title: "First Place - Global AI Hackathon 2024",
     organization: "TechCorp International",
     date: "January 2024",
+    about: [
+      {
+        title: "Collaborative Editing",
+        description:
+          "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white">
+            <img
+              src="/professional-profile.jpg"
+              width={300}
+              height={300}
+              className="h-full w-full object-cover"
+              alt="linear board demo"
+            />
+          </div>
+        ),
+      },
+      {
+        title: "Real time changes",
+        description:
+          "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center text-white">
+            <img
+              src="/godawari.jpeg"
+              width={300}
+              height={300}
+              className="h-full w-full object-cover"
+              alt="linear board demo"
+            />
+          </div>
+        ),
+      },
+      {
+        title: "Version control",
+        description:
+          "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] text-white">
+            <img
+              src="/jungle.jpeg"
+              width={300}
+              height={300}
+              className="h-full w-full object-cover"
+              alt="linear board demo"
+            />
+          </div>
+        ),
+      },
+      {
+        title: "Running out of content",
+        description:
+          "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white">
+            <img
+              src="/maak-arar.jpeg"
+              width={300}
+              height={300}
+              className="h-full w-full object-cover"
+              alt="linear board demo"
+            />
+          </div>
+        ),
+      },
+    ],
     description:
       "Won first place among 500+ participants worldwide by developing an AI-powered solution for sustainable agriculture. Our team created a machine learning model that predicts crop yields with 94% accuracy, helping farmers optimize their resources.",
     category: "competition",
@@ -13,34 +79,6 @@ export const achievementsData: Achievement[] = [
     skills: ["Python", "TensorFlow", "React", "FastAPI", "Docker"],
     link: "https://example.com/certificate",
     images: ["/achievements/kibo.png"],
-  },
-  {
-    id: "aws-solutions-architect",
-    title: "AWS Certified Solutions Architect - Professional",
-    organization: "Amazon Web Services",
-    date: "November 2023",
-    description:
-      "Earned the AWS Solutions Architect Professional certification, demonstrating advanced technical skills and expertise in designing distributed applications and systems on the AWS platform. This certification validates my ability to design and deploy dynamically scalable, highly available, fault-tolerant, and reliable applications.",
-    category: "certification",
-    skills: [
-      "AWS",
-      "Cloud Architecture",
-      "DevOps",
-      "Infrastructure as Code",
-      "Kubernetes",
-    ],
-    link: "https://aws.amazon.com/certification/",
-  },
-  {
-    id: "opensource-contributor-2023",
-    title: "Top Open Source Contributor Award",
-    organization: "GitHub",
-    date: "December 2023",
-    description:
-      "Recognized as a top contributor to major open-source projects, with over 500 contributions made throughout the year. Contributed to popular frameworks and libraries including Next.js, React, and TailwindCSS, helping improve documentation and fix critical bugs.",
-    category: "recognition",
-    skills: ["JavaScript", "TypeScript", "Git", "Open Source", "Documentation"],
-    link: "https://github.com",
   },
   {
     id: "google-developer-expert",
@@ -86,33 +124,6 @@ export const achievementsData: Achievement[] = [
       "DevOps",
     ],
     link: "https://www.cncf.io/certification/cka/",
-  },
-  {
-    id: "best-mentor-2022",
-    title: "Best Technical Mentor Award",
-    organization: "DevMentor Platform",
-    date: "December 2022",
-    description:
-      "Awarded Best Technical Mentor for outstanding contribution to helping junior developers grow their skills. Mentored 50+ developers in full-stack development, conducted weekly coding sessions, and maintained a 4.9/5 satisfaction rating.",
-    category: "recognition",
-    skills: [
-      "Mentoring",
-      "Teaching",
-      "Full-stack Development",
-      "Code Review",
-      "Career Guidance",
-    ],
-  },
-  {
-    id: "startup-hackathon-winner",
-    title: "Winner - Startup Weekend 2022",
-    organization: "Techstars",
-    date: "September 2022",
-    description:
-      "Led a team to win Startup Weekend by pitching and building a SaaS product for remote team collaboration. Developed a working prototype in 54 hours that attracted interest from three potential investors. The product focused on asynchronous video communication for distributed teams.",
-    category: "competition",
-    rank: "Winner",
-    skills: ["Product Management", "Next.js", "WebRTC", "PostgreSQL", "Agile"],
   },
 ];
 

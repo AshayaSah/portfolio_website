@@ -1,4 +1,5 @@
 import { LucideIcon } from "lucide-react";
+import { JSX, ReactNode } from "react";
 
 type CategoryKey = "award" | "certification" | "competition" | "recognition";
 
@@ -7,6 +8,7 @@ export interface Achievement {
   title: string;
   organization: string;
   date: string;
+  about?: AchievementAbout[];
   description: string;
   category: CategoryKey;
   images?: string[];
@@ -21,6 +23,12 @@ type CategoryConfigItem = {
   bgColor: string;
   borderColor: string;
   label: string;
+};
+
+export type AchievementAbout = {
+  title: string;
+  description: string;
+  content: ReactNode;
 };
 
 export type CategoryConfig = Record<CategoryKey, CategoryConfigItem>;

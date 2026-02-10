@@ -15,6 +15,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { categoryConfig } from "./AchievementsGrid";
 import { Achievement } from "@/data/AchievementsTypes";
+import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 
 interface AchievementDetailProps {
   achievement: Achievement;
@@ -48,7 +49,7 @@ export default function Achievements({ achievement }: AchievementDetailProps) {
 
   return (
     <div className="bg-background py-12">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 max-w-4xl">
         {/* Back Button */}
         <Link
           href="/achievements"
@@ -122,7 +123,7 @@ export default function Achievements({ achievement }: AchievementDetailProps) {
           </div>
 
           {/* Image Section (if available) */}
-          {achievement.images && (
+          {/* {achievement.images && (
             <div className="relative w-full h-64 md:h-96 bg-muted">
               <Image
                 src={achievement.images[0]}
@@ -132,17 +133,21 @@ export default function Achievements({ achievement }: AchievementDetailProps) {
                 priority
               />
             </div>
+          )} */}
+
+          {achievement.about && (
+            <StickyScroll content={achievement.about}></StickyScroll>
           )}
 
           {/* Content Section */}
           <div className="p-8 md:p-12">
             {/* Description */}
-            <div className="mb-8">
+            {/* <div className="mb-8">
               <h2 className="text-2xl font-bold text-foreground mb-4">About</h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
                 {achievement.description}
               </p>
-            </div>
+            </div> */}
 
             {/* Skills Section */}
             {achievement.skills && achievement.skills.length > 0 && (

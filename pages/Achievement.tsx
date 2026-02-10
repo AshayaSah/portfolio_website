@@ -1,7 +1,8 @@
 "use client";
-import { StickyScrollAchievements } from "@/components/ui/sticky-scroll-reveal";
-import React from "react";
-const content = [
+import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
+import { AchievementAbout } from "@/data/AchievementsTypes";
+
+const content: AchievementAbout[] = [
   {
     title: "Collaborative Editing",
     description:
@@ -52,7 +53,7 @@ const content = [
 export function StickyScrollRevealDemo() {
   return (
     <div className="w-full py-4">
-      <StickyScrollAchievements />
+      <StickyScroll content={content} />
     </div>
   );
 }
